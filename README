@@ -1,30 +1,13 @@
 FBVNC
 =====
 
-Fbvnc is a small VNC client for Linux framebuffer.  It can be invoked
-as follows.
+Fbvnc is a small VNC client for Linux framebuffer with touch device.
+It uses optional VNC authentication and ZLIB compression.
+It can be invoked as follows.
 
-  $ fbvnc host port
+  $ fbvnc [-p password] [-t port] host
 
-Without arguments, it connects to port 5900 of 127.0.0.1.  Once
-connected, it sends keyboard and mouse inputs to the VNC server and
-updates the screen when necessary.  The following keys are not sent to
-the server.
+The default port is 5900.
 
-==============	===================================
-KEY		ACTION
-==============	===================================
-ctrl-space	Stop/continue updating the screen
-ctrl-alt-c	Exit fbvnc
-==============	===================================
-
-The zlib branch supports zlib compression.
-
-When using fbvnc with fbpad, it is usually a good idea to list the tag
-in which fbvnc is run in TAGS_SAVED (the scrsnap feature), so that
-when switching back to the tag, its old contents are shown.  Also, it
-is possible to disable drawing when switching from the terminal in
-which fbvnc is run, and to enable it when switching back (instead of
-using ctrl-space manually each time).  To do so, execute the shell in
-fbpad using m-; (not the usual m-c), to enable terminal switching
-signals.
+Once connected, it sends mouse inputs to the VNC server and
+updates the screen when necessary.
